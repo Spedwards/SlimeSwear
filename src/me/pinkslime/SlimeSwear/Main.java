@@ -4,7 +4,6 @@ import org.spongepowered.api.entity.Player;
 import org.spongepowered.api.event.Subscribe;
 import org.spongepowered.api.event.player.PlayerChatEvent;
 import org.spongepowered.api.plugin.Plugin;
-import org.spongepowered.api.util.command.CommandSource;
 
 @Plugin(id="SlimeSwear", name="SlimeSwear", version="1.0.0-SNAPSHOT")
 public class Main {
@@ -14,7 +13,8 @@ public class Main {
 		
 		String msg = e.getMessage();
 		Player player = e.getPlayer();
-		CommandSource src = e.getSource();
+		
+		player.sendMessage("[SlimeSwear] Please watch your language in future.");
 		
 		msg = msg.replaceAll("(?i)arsehole|asshole", "Elephant and Castle");
 		msg = msg.replaceAll("(?i)arse|ass", "Bottle and Glass");
@@ -25,12 +25,12 @@ public class Main {
 		msg = msg.replaceAll("(?i)crap", "Von Trappe");
 		msg = msg.replaceAll("(?i)cum", "Bubble Gum");
 		msg = msg.replaceAll("(?i)cunt", "Berkeley Hunt");
+		msg = msg.replaceAll("(?i)dick", "Rock and Stick");
 		msg = msg.replaceAll("(?i)dump", "Donald Trump");
 		msg = msg.replaceAll("(?i)fanny", "Jack and Danny");
 		msg = msg.replaceAll("(?i)fart", "Raspberry Tart");
-		msg = msg.replaceAll("(?i)Fucker", "Feather Plucker");
+		msg = msg.replaceAll("(?i)fucker", "Feather Plucker");
 		msg = msg.replaceAll("(?i)fuck", "Friar Tuck");
-		msg = msg.replaceAll("(?i)horn", "Popcorn");
 		msg = msg.replaceAll("(?i)pissed", "Oliver Twist");
 		msg = msg.replaceAll("(?i)piss", "Hit and Miss");
 		msg = msg.replaceAll("(?i)prick", "Hampton Wick");
@@ -42,11 +42,11 @@ public class Main {
 		msg = msg.replaceAll("(?i)spunk", "Harry Monk");
 		msg = msg.replaceAll("(?i)tits", "Brace and Bits");
 		msg = msg.replaceAll("(?i)titty", "Bristol City");
-		msg = msg.replaceAll("(?i)Turd", "Douglas Hurd");
+		msg = msg.replaceAll("(?i)turd", "Douglas Hurd");
 		msg = msg.replaceAll("(?i)wanker", "Merchant Banker");
 		msg = msg.replaceAll("(?i)wank", "Sherman Tank");
 				
-		e.setMessage(msg);
+		// e.setMessage(msg);  Awaiting this method...
 	}
 	
 }
